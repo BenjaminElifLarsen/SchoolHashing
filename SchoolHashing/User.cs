@@ -1,9 +1,14 @@
 ﻿namespace SchoolHashing;
 public class User
 {
-    public string Username { get; private set; }
-    public string HashedPassword { get; private set; }
+    public string Username { get; set; }
+    public string HashedPassword { get; set; }
+    public string GetSalt => new(HashedPassword[..44].Select(s => s).ToArray());
 
+    public User()
+    {
+
+    }
 
     private User(string username, string hashedPassword)
     {

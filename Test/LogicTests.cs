@@ -2,18 +2,18 @@ using SchoolHashing;
 
 namespace Test;
 
-public class Context
+public class LogicTests
 {
     [Fact]
     public void RegistrationSuccess()
     {
-        Assert.True(new SchoolHashing.Context().Registrate("Bob", "Test123!"));
+        Assert.True(new Context(false).Registrate("Bob", "Test123!"));
     }
 
     [Fact]
     public void RegistrationFailed()
     {
-        var context = new SchoolHashing.Context();
+        var context = new Context(false);
         context.Registrate("Bob", "Test123!");
         Assert.False(context.Registrate("Bob", "Test123!"));
     }
@@ -21,7 +21,7 @@ public class Context
     [Fact]
     public void LogInSuccess()
     {
-        var context = new SchoolHashing.Context();
+        var context = new Context(false);
         context.Registrate("Bob", "Test123!");
         Assert.True(context.Login("Bob", "Test123!") != null);
     }
@@ -29,7 +29,7 @@ public class Context
     [Fact]
     public void LogInFailed()
     {
-        var context = new SchoolHashing.Context();
+        var context = new Context(false);
         context.Registrate("Bob", "Test123!");
         Assert.False(context.Login("Bob", "Test124!") != null);
     }

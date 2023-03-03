@@ -25,9 +25,9 @@ internal class Hasher
 
     private static string Calculation(string toEncode, byte[] salt)
     {
-        string hashed = null;
+        string hashed = null; //implement pepper?
 
-        using(SHA256 sha = SHA256.Create())
+        using (SHA256 sha = SHA256.Create())
         {
             byte[] toHash = salt.Concat(toEncode.Select(x => (byte)x)).ToArray();
             byte[] hashArray = sha.ComputeHash(toHash);

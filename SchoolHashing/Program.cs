@@ -19,3 +19,5 @@ var test3 = context.Login("Bob", "Test124!");
 Console.WriteLine(test is not null);
 Console.WriteLine(test2 is not null);
 Console.WriteLine(test3 is not null);
+string text = File.ReadAllText("DataContext.txt");
+Console.WriteLine(text);
