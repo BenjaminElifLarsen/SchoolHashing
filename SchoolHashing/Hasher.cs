@@ -1,6 +1,6 @@
 ﻿using System.Security.Cryptography;
 namespace SchoolHashing;
-internal class Hasher
+public class Hasher
 {
     /// <summary>
     /// Used for fully new passwords

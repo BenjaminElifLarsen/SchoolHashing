@@ -8,12 +8,13 @@ byte options = 0;
 bool exist = false;
 
 User user = null;
+
 do
 {
     Clear();
     DisplayUser();
     MenuDisplay();
-    options = MenuSelect();
+    options = MenuSelect(); 
     switch (options)
     {
         case 0:

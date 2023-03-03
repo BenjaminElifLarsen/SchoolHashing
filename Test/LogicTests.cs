@@ -1,4 +1,5 @@
 using SchoolHashing;
+using System.Diagnostics;
 
 namespace Test;
 
@@ -32,5 +33,13 @@ public class LogicTests
         var context = new Context(false);
         context.Registrate("Bob", "Test123!");
         Assert.False(context.Login("Bob", "Test124!") != null);
+    }
+
+    [Fact]
+    public void DifferentPasswords()
+    {
+        string val1 = Hasher.HashAndSalt("Test123!");
+        string val2 = Hasher.HashAndSalt("Test123!");
+        Assert.False(string.Equals(val1, val2));
     }
 }
