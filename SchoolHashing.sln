@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32819.101
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SchoolHashing", "SchoolHashing\SchoolHashing.csproj", "{21296070-2399-413D-8CC2-E510EBE64EDD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test", "Test\Test.csproj", "{51F26ED1-C76E-47B7-A81C-D0D54D944750}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{21296070-2399-413D-8CC2-E510EBE64EDD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{21296070-2399-413D-8CC2-E510EBE64EDD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{21296070-2399-413D-8CC2-E510EBE64EDD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{21296070-2399-413D-8CC2-E510EBE64EDD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{51F26ED1-C76E-47B7-A81C-D0D54D944750}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{51F26ED1-C76E-47B7-A81C-D0D54D944750}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{51F26ED1-C76E-47B7-A81C-D0D54D944750}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{51F26ED1-C76E-47B7-A81C-D0D54D944750}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BEB8B970-F9D9-4781-8397-E881F5376064}
+	EndGlobalSection
+EndGlobal
