@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Schema;
 
 namespace SchoolHashing;
 public class Context
@@ -13,7 +14,12 @@ public class Context
 
     public User? Login(string username, string password)
     {
-        return _users.SingleOrDefault(x => x.Username == username);
+        foreach (var u in _users)
+        {
+            string foundPassword = Hasher.HashAndSalt(password, Convert.FromBase64String(new string(u.HashedPassword[..44].Select(s => s).ToArray())));
+
+        }
+        return _users.SingleOrDefault(x => x.Username == username && x.HashedPassword == Hasher.HashAndSalt(password, Convert.FromBase64String(new string(x.HashedPassword[..44].Select(s => s).ToArray()))));
     }
 
     public bool Registrate(string username, string password)

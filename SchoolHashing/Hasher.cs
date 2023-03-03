@@ -9,8 +9,7 @@ internal class Hasher
     /// <returns></returns>
     public static string HashAndSalt(string toEncode)
     {
-        byte[] salt = RandomNumberGenerator.GetBytes(32);
-        return Calculation(toEncode, salt);
+        return Calculation(toEncode, RandomNumberGenerator.GetBytes(32));
     }
 
     /// <summary>
@@ -30,11 +29,10 @@ internal class Hasher
 
         using(SHA256 sha = SHA256.Create())
         {
-            byte[] hashArray = sha.ComputeHash(toEncode.Select(x => (byte)x).ToArray());
-            hashed = Convert.ToBase64String(hashArray);
+            byte[] toHash = salt.Concat(toEncode.Select(x => (byte)x)).ToArray();
+            byte[] hashArray = sha.ComputeHash(toHash);
+            hashed = Convert.ToBase64String(salt) + Convert.ToBase64String(hashArray);
         }
         return hashed;
-        //string hashed = Convert.ToBase64String(KeyDerivation.Pbkdf2(toEncode, salt, KeyDerivationPrf.HMACSHA512, 100000, 32));
-        //return Convert.ToBase64String(salt) + hashed;
     }
 }
